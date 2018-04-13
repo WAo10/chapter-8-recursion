@@ -13,7 +13,7 @@ public class recursiveIntro
    
          // nums(100);
          //nums2(100);
-         //revString("waleed");
+         revString("waleed");
     //       int n = 73;
     //       int x = prime(n,2);
     //        if(x == 1)
@@ -24,7 +24,7 @@ public class recursiveIntro
     //         {
     //             System.out.println(n+" is not prime number");
     //         }
-    System.out.print(fibb(12));
+    //System.out.print(fibb(12));
   }
   
   public static void nums(int n)
@@ -49,14 +49,18 @@ public class recursiveIntro
        }
    }
   
-  public static void revString(String b)
+  public static String revString(String b)
   {
-     if (b.length()-1 >= 0)
+      String rev = "";
+     if (b.length() < 0)
      {
-     System.out.print(b.charAt(b.length()-1));
-     revString(b.substring(0,b.length() -1));
-     }
-   
+         return "";
+        }
+        else
+        {
+            return (b.charAt(b.length()-1)) + revString(b.substring(0, b.length()-1));
+        }
+     
    }
   
   static int prime(int y,int i)

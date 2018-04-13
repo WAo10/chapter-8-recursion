@@ -26,6 +26,22 @@ public class ch8starter
 
        System.out.println(multi(5, 4));
        System.out.println(multi(2, 3));
+       
+       int[] num = new int[MAX];
+       Random gen = new Random();
+       
+       for (int i=0; i<MAX; i++)
+       {
+           num[i] = gen.nextInt(10000)+1;
+        }
+       
+        for (int j = 4980000; j<MAX; j++)
+        {
+            System.out.print(num[j]+"\t");
+        }
+        
+ 
+       RecursiveSorts.quickSort(num);
        //System.out.println( "is" + pow(3,3) );
        //make int array of 100 and pop with 100 random int' 1-500
 /*
