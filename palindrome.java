@@ -12,7 +12,7 @@ public class palindrome
     {
         if (test.charAt(0) == test.charAt(test.length()-1))
         {
-            return palin_test(test.substring(1, -2));
+            return palin_test(test.substring(1, test.length()-2));
         }
         else
         {
