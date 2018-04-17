@@ -2,7 +2,9 @@
 comment0.params=monetaryGoal
 comment0.target=int\ collect(int)
 comment1.params=test
-comment1.target=boolean\ palin_test(java.lang.String)
+comment1.target=boolean\ palin(java.lang.String)
 comment2.params=num1\ num2
 comment2.target=int\ gcd(int,\ int)
-numComments=3
+comment3.params=value\ current
+comment3.target=int\ money(int,\ int)
+numComments=4

@@ -5,6 +5,7 @@
  */
 public class recursive_Labs
 {
+    private static int[] bills = {1, 5, 10, 20, 100};
     public static int collect(int monetaryGoal)
     {
        if (monetaryGoal>=10)
@@ -21,20 +22,19 @@ public class recursive_Labs
         }
     }
 
-    public static boolean palin_test(String test)
+    public static boolean palin(String test)
     {
-        if (test.length()==1)
+        System.out.println(test);
+        if (test.length()==1 || test.length()==0)
         {
             return true;
         }
-        else if (test.charAt(0) == test.length()-1)
+        if (test.charAt(0) == test.charAt(test.length()-1))
         {
-            return palin_test(test.substring(1, test.length()-1));
+            return palin(test.substring(1, test.length()-1));
         }
-        else
-        {
+
             return false;
-        }
     }
     
     public static int gcd(int num1, int num2)
@@ -53,5 +53,24 @@ public class recursive_Labs
         }
     }
     
-    
+    public static int money(int value, int current)
+    {
+        if (value==0)
+        {
+            return 1;
+        }
+        if (value<0)
+        {
+            return 0;
+        }
+        
+        int combos = 0;
+        
+        for(int bill = current; bill<bills.length; bill++)
+        {
+            combos += money(value-bills[bill], bill);
+        }
+        
+        return combos;
+    }
 }
