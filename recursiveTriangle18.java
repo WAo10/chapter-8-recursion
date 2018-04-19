@@ -58,14 +58,6 @@ public class recursiveTriangle18 extends JApplet
         int[] mPnx = new int[4];
         int[] mPny = new int[4];
         
-        int[] mPx1 = new int[4];
-        int[] mPy1 = new int[4];
-        
-        int[] mPx2 = new int[4];
-        int[] mPy2 = new int[4];
-        
-        int[] mPx3 = new int[4];
-        int[] mPy3 = new int[4];
         
         if (length<30)
         {
@@ -83,25 +75,25 @@ public class recursiveTriangle18 extends JApplet
             mPy[3]=mPy[0];
           
            
-          mPx1[0]=mPx[0];
-           mPx1[1]=-mPx[1];
-           mPx1[2]=mPx[2];
-           mPx1[3]=mPx[3];
+           int[] mPx1 = {mPx[0], mPx[0]-length, mPx[1]-1, mPx[0]};
            
-           mPx2[0]=-mPx[0];
-           mPx2[1]=mPx[1];
-           mPx2[2]=mPx[2];
-           mPx2[3]=-mPx[3];
+           int[] mPx2;
            
-           mPx3[1]=mPx[1];
-           mPx3[0]=mPx[0];
-           mPy3[2]=-mPy[2];
-           mPx3[3]=mPx[3];
+           int[] mPx3;
+          
+           int[] mPy1 = {mPx[0]};
+           
+           int[] mPy2;
+           
+           int[] mPy3;
+          
             //draw the Triangle
             page.drawPolyline (mPx, mPy, mPx.length);
+            page.drawPolyline (mPx1, mPy1, mPx.length);
+            page.drawPolyline (mPx2, mPy2, mPx.length);
+            page.drawPolyline (mPx3, mPy3, mPx.length);
             
             //draw other triangles
-            Triangle(mPx, mPy, page);
             Triangle(mPx1, mPy1, page);
             Triangle(mPx2, mPy2, page);
             Triangle(mPx3, mPy3, page);
