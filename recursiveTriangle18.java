@@ -50,48 +50,41 @@ public class recursiveTriangle18 extends JApplet
        //if the segment/distance is 30 or so, good length to stop
             //find the mid points of each line segment
             //make the x and y array (3 points + first point to finish triangle)
-
-
-         int[] mPx = new int[4];
-        int[] mPy = new int[4];
-        
-        int[] mPnx = new int[4];
-        int[] mPny = new int[4];
-        
-        
+                
         if (length<30)
         {
             return;
         }
         else
         {
-           for (int i = 0; i<xPos.length-1; i++)
-           {
-             mPx[i] = (xPos[i]+xPos[i+1])/2;
-             mPy[i] = (yPos[i]+yPos[i+1])/2;
-           }
+           int x1 = (xPos[0]+xPos[1])/2; 
+           int x2 = (xPos[1]+xPos[2])/2; 
+           int x3 = (xPos[2]+xPos[3])/2; 
+           int y1 = (yPos[0]+yPos[1])/2; 
+           int y2 = (yPos[1]+yPos[2])/2; 
+           int y3 = (yPos[2]+yPos[3])/2; 
+           
+           int[] mPx = {x1, x2, x3, x1};
+           int[] mPy = {y1, y2, y3, y1};
            
            mPx[3]=mPx[0];
-            mPy[3]=mPy[0];
+           mPy[3]=mPy[0];
           
            
-           int[] mPx1 = {mPx[0], mPx[0]-length, mPx[1]-1, mPx[0]};
+           int[] mPx1 = {xPos[0], x1, x3, xPos[0]};
            
-           int[] mPx2;
+           int[] mPx2 = {xPos[1], x2, x1, xPos[1]};
            
-           int[] mPx3;
+           int[] mPx3 = {xPos[2], x3, x2, xPos[2]};
           
-           int[] mPy1 = {mPx[0]};
+           int[] mPy1 = {yPos[0], y1, y3, yPos[0]};
            
-           int[] mPy2;
+           int[] mPy2 = {yPos[1], y2, y1, yPos[1]};;
            
-           int[] mPy3;
+           int[] mPy3 = {yPos[2], y3, y2, yPos[2]};;
           
             //draw the Triangle
             page.drawPolyline (mPx, mPy, mPx.length);
-            page.drawPolyline (mPx1, mPy1, mPx.length);
-            page.drawPolyline (mPx2, mPy2, mPx.length);
-            page.drawPolyline (mPx3, mPy3, mPx.length);
             
             //draw other triangles
             Triangle(mPx1, mPy1, page);
@@ -102,7 +95,7 @@ public class recursiveTriangle18 extends JApplet
  
 
             //create x,y Array using the midpoints you calculated
-            //example
+            //example 
 
 
 
