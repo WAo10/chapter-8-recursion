@@ -1,3 +1,5 @@
+//William Ao
+
 import javax.swing.JApplet;
 import java.awt.*;
 
@@ -51,7 +53,7 @@ public class recursiveTriangle18 extends JApplet
             //find the mid points of each line segment
             //make the x and y array (3 points + first point to finish triangle)
                 
-        if (length<30)
+        if (length<10)
         {
             return;
         }
